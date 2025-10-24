@@ -1,0 +1,12 @@
+[velocity]
+enabled = true
+port = 25577
+filter = velocity
+logpath = /home/minecraft/velocity/logs/latest.log
+maxretry = 5
+findtime = 60
+bantime = 43200
+banaction = iptables-multiport
+
+[DEFAULT]
+ignoreip = 127.0.0.1/8 ::1 192.168.3.0/24
