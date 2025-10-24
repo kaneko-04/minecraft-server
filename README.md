@@ -9,7 +9,7 @@
 
 ## 使用技術
 - **OS / セキュリティ**: Debian, UFW, iptables, Fail2Ban  
-- **ネットワーク / プロキシ**: HAProxy, Velocity (Minecraft Proxy)  
+- **ネットワーク / プロキシ**: HAProxy, Velocity (Minecraft Proxy Server)  
 - **DNS / ドメイン運用**: Cloudflare DNS  
 - **アプリケーション環境**: Java (JDK), Minecraft Server (Fabric)  
 
