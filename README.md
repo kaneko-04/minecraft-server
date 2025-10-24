@@ -52,6 +52,7 @@
   - これにより、Minecraftサーバーの実IPを外部に公開せず、接続経路を制御可能
   - また、将来的な複数サーバー運用を見越し、負荷分散や接続ルーティングの基盤を先行して整備
   - TCPモードでのプロキシ運用によって、Minecraftの非HTTP通信にも対応
+  - こちらにも簡易的なレート制限を設けることで、DDoSやスパムの防止
 - **CloudflareによるDNS管理**
   - 独自ドメインをCloudflareで取得し、AレコードでサーバーのグローバルIPを登録
   - SRVレコードを用いてMinecraft専用ポートを指定することでクライアントはドメイン名のみで接続可能
@@ -73,7 +74,7 @@
   - システム環境変数を設定し、javaコマンドによる直接実行を可能に
 - **MinecraftサーバーとVelocityのセットアップ**
   - modサーバーとVelocity間の通信を最適化するため、server.propertiesとvelocity.tomlの設定を調整
-  - 起動スクリプトを作成し、サーバーが強制終了しても自動で再起動するよう設定。
+  - 起動スクリプトを作成し、サーバーが強制終了しても自動で再起動するよう設定
   - また、screen を用いてバックグラウンドでデタッチ可能に
 
 ## 課題と学び
@@ -124,4 +125,3 @@ Linux環境でのセキュリティ設計・ネットワーク構成・運用自
   - [DoS攻撃/DDoS攻撃からサーバーを守る方法（fail2banのススメ）](https://colo-ri.jp/develop/2016/02/fail2ban.html)
   - [【Velocity】プロキシサーバを踏んでPaperMCやFabricサーバに接続する](https://zenn.dev/kake26s/articles/811faf83271738)
   - [Nohit.cc](https://docs.nohit.cc/)
-  - 
