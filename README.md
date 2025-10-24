@@ -76,11 +76,11 @@
   - 起動スクリプトを作成し、サーバーが強制終了しても自動で再起動するよう設定。
   - また、screen を用いてバックグラウンドでデタッチ可能に
 
-### 4.課題と学び
+## 課題と学び
 - **課題1：ドメイン経由でのみアクセス制限**
   - 問題点：ドメイン経由でのみアクセスを許可し、グローバルIPによる直接アクセスを禁止したかったが未実現
   - 原因：Minecraftプロトコルの特性とDNS設定の制約により
-  - 今後の対応：未定
+  - 今後の対応：方法の模索
 - **課題2：コンテナ化未実施**
   - 現状：直接Debian上にインストール
   - 問題点：
@@ -89,11 +89,39 @@
     - 他サーバーへの移行が困難
   - 今後の改善：Dockerによるコンテナ化を検討中
 
-### 5.今後の改善予定
+## 今後の改善予定
 - Dockerによるサーバー環境のコンテナ化
 - 自動バックアップスクリプトの導入
 - モニタリングツールの導入（Prometheus / Grafana)
 - CI/CDパイプラインの構築
 - ドメインのみでアクセス許可の実装
 
-### 
+## 運用実績
+- 稼働期間：必要時に起動し、プレイ時に長期稼働
+- 利用者数：身内プレイヤー数名
+- ダウンタウン：ほぼなし（メンテナンス時を除く）
+- 安定稼働を維持
+
+## まとめ
+本プロジェクトでは、単なるMinecraftサーバー構築に留まらず、
+Linux環境でのセキュリティ設計・ネットワーク構成・運用自動化の基礎を体系的に学ぶことができた。
+特に、
+- リバースプロキシ（HAProxy）とVelocityの連携構成
+- UFW / iptables / Fail2Ban の三層防御
+- Cloudflareによるドメイン運用
+といった設計を通じて、実運用に耐える安全な通信基盤の構築ノウハウを得た。
+今後はコンテナ技術の習得と、より高度な自動化・監視体制の構築に取り組み、小規模ながら実運用サーバーとしての完成度を高めることを目標とする。
+
+
+## 使用したリソース
+- 公式ドキュメント
+  - [HAProxy公式ドキュメント](https://www.haproxy.com/documentation/)
+  - [Cloudflareラーニングセンター](https://www.cloudflare.com/ja-jp/learning/)
+  - [Fail2Ban公式Wiki](https://github.com/fail2ban/fail2ban/wiki)
+  - [Velocity公式ドキュメント](https://docs.papermc.io/velocity/)
+- 技術ブログ・Qiita記事
+  - [Debian 系ディストリビューションで Minecraft サーバを立てるまで](https://zenn.dev/genbu/scraps/414e9277ca1b2e)
+  - [DoS攻撃/DDoS攻撃からサーバーを守る方法（fail2banのススメ）](https://colo-ri.jp/develop/2016/02/fail2ban.html)
+  - [【Velocity】プロキシサーバを踏んでPaperMCやFabricサーバに接続する](https://zenn.dev/kake26s/articles/811faf83271738)
+  - [Nohit.cc](https://docs.nohit.cc/)
+  - 
